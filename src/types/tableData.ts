@@ -9,7 +9,7 @@ export interface TableDataState {
   filteredRowsData: any[];
   isSwitchedToFilteredData: boolean;
   isDataLoading: boolean;
-  isLoadingError: null | string;
+  loadingError: null | string;
   sortDirection: null | SortDirection;
   sortedColumnName: null | string;
 }
