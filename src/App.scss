@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.app-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.header {
+    height: 128px;
+    flex: 1 0 100%;
+    background-color: #F2F3F4;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 128px;
+    width: 100%;
+    background-color: #F2F3F4;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content-wrapper {
+    flex: 0 1 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    height: auto;
+    flex: 0 0 224px;
+    background-color: #E4E5E6;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    @media (max-width:755px) {
+        flex: 1 0 100%;
+    }
+}
+
+
+.table-filter {
+    display: flex;
+    align-items: center;
+
+    .table-filter-input-wrapper {
+        flex: 1 1 auto;
+        position: relative;
+        margin: 0px 8px 0px 0px;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 16px;
+            width: 16px;
+            background-image: url("./assets/input-search-icon.svg");
+            position: absolute;
+            top: 13px;
+            left: 16px;
+            z-index: 1;
+        }
+    }
+
+    .table-filter-input {
+        width: 100%;
+        height: 42px;
+        border: 0.5px solid #DEE5EB;
+        padding: 0px 0px 0px 40px;
+        font-size: 12px;
+        background-color: #F7F8F9;
+    }
+
+    .table-filter-button {
+        color: #fff;
+        background-color: #7B8395;
+        padding: 12px 68px;
+        border: none;
+        cursor: pointer;
+
+        &:active {
+            background-color: #6d7485;
+        }
+    }
+}
+
+.table-block-wrapper {
+    flex: 0 1 calc(100% - 224px);
+    height: calc(100vh - 256px);
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    @media (max-width:755px) {
+        flex: 1 1 100%;
+        height: calc(100vh - 309px);
+    }
+
+    .table-wrapper {
+        flex: 1 1 100%;
+        margin: 16px 0px 0px 0px;
+        border: 1px solid #DEE5EB;
+        overflow-x: auto;
+        
+        table {
+            width: 100%;
+            border: 1px solid #DEE5EB;
+            border-collapse: collapse;
+
+            thead th {
+                border: 1px solid #DEE5EB;
+                background-color: #E6EBF0;
+                color: #7B8395;
+                font-weight: 500;
+                font-size: 12px;
+                text-align: center;
+                padding: 16px 0;
+                cursor: pointer;
+                min-width: 120px;
+                width: 12.5%;
+
+                &:first-child {
+                    min-width: 172px;
+                    padding: 16px;
+                }
+
+                &.sorted {
+                    position: relative;
+                    background-color: #F7F8F9;
+                    text-align: left;
+                    padding: 0px 0px 0px 16px;
+
+                    img {
+                        display: block;
+                        position: absolute;
+                        height: 24px;
+                        width: 24px;
+                        right: 16px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+
+            tbody th {
+                min-width: 120px;
+                border: 1px solid #DEE5EB;
+                font-size: 13px;
+                text-align: center;
+                padding: 12px 16px;
+                font-weight: 500;
+
+                &:first-child {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    .selected-car-block {
+        flex: 0 1 auto;
+        min-height: 41px;
+        margin: 16px 0px 0px 0px;
+        background-color: #F7F8F9;
+        color: #7B8395;
+        font-weight: 600;
+        font-size: 12px;
+        padding: 13px 16px;
+    }
+}
+
