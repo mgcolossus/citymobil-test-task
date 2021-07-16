@@ -5,8 +5,8 @@ const initialState: TableDataState = {
   columnNames: [],
   filteredRowsData: [],
   isSwitchedToFilteredData: false,
-  isDataLoading: false,
-  isLoadingError: null,
+  isDataLoading: true,
+  loadingError: null,
   sortDirection: null,
   sortedColumnName: null,
 };
@@ -51,12 +51,12 @@ export const tableDataReducer = (state = initialState, action: TableDataAction):
       return {
         ...initialState,
         isDataLoading: false,
-        isLoadingError: null,
+        loadingError: null,
         rowsData: action.payload.rowsData,
         columnNames: action.payload.columnNames,
       };
     case TableDataActionTypes.FETCH_TABLE_DATA_ERROR:
-      return { ...initialState, isLoadingError: action.payload };
+      return { ...initialState, loadingError: action.payload };
     case TableDataActionTypes.SORT_TABLE: {
       let newSortDirection = SortDirection.ASC;
       if (action.payload.columnName === state.sortedColumnName) {
