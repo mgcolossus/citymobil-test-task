@@ -1,3 +1,13 @@
+# Тестовое задание Citymobil
+Требовалось создать таблицу для выбора моделей машин. Реализована возможность поиска по подстрокам в таблице, при нажатии на заголовок таблицы происходит сортировка. При вынажатии на год в строке с моделью происходит выбор модели и появляется блок с выбранной моделью.
+
+Выполнено с использованием:
+* React
+* Typescript
+* Redux
+
+Деплой: https://citymobil-test-task.netlify.app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
